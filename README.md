@@ -6,3 +6,10 @@
 
  - 관련 자료#01: https://aws.amazon.com/ko/blogs/security/how-to-add-dns-filtering-to-your-nat-instance-with-squid/
  - 관련자료 #02: https://aws.amazon.com/ko/blogs/security/how-to-set-up-an-outbound-vpc-proxy-with-domain-whitelisting-and-content-filtering/
+
+
+```bash
+못한것들.. 
+ - ASG 구성으로 변경 
+ - VPC Network 중앙화 
+```
