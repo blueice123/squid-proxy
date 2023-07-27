@@ -1,9 +1,18 @@
 locals{ ## workspace 별로 배포되는 AWS 계정을 여러개로 분리, 이는 provider 에서 정의 됨
-    dev  = "${terraform.workspace == "dev" ? "1111111111111": ""}"
-    qa   = "${terraform.workspace == "qa" ? "1111111111111": ""}"
-    prod = "${terraform.workspace == "prod" ? "239234376445": ""}" 
-    account_num    = "${coalesce(local.dev, local.qa, local.prod)}"
+    prd             = "${terraform.workspace == "prd" ? "333003622053": ""}"        
+    mgmt            = "${terraform.workspace == "mgmt" ? "333003622053": ""}"      
+    log             = "${terraform.workspace == "log" ? "333003622053": ""}"       
+    shared          = "${terraform.workspace == "shared" ? "239234376445": ""}"    
+    sec             = "${terraform.workspace == "sec" ? "333003622053": ""}"       
+    net             = "${terraform.workspace == "net" ? "239234376445": ""}" 
+    audit           = "${terraform.workspace == "net" ? "239234376445": ""}" 
+    account_num     = "${coalesce(local.prd, local.mgmt, local.log, local.shared, local.sec, local.net, local.audit)}"
 }
+
+resource "random_id" "random" {
+    byte_length = 4
+}
+
 
 # Input locals
 ############################
