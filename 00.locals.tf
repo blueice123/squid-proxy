@@ -9,11 +9,6 @@ locals{ ## workspace 별로 배포되는 AWS 계정을 여러개로 분리, 이�
     account_num     = "${coalesce(local.prd, local.mgmt, local.log, local.shared, local.sec, local.net, local.audit)}"
 }
 
-resource "random_id" "random" {
-    byte_length = 4
-}
-
-
 # Input locals
 ############################
 ## subneting of VPC
