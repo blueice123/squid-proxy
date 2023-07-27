@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 필수 패키지 설치 
-sudo mkdir -p /home/ec2-user/package/docker/
+sudo mkdir -p /home/ec2-user/package/docker/ /home/ec2-user/package/cronie/
 sudo yum install docker -y --downloadonly --downloaddir=/home/ec2-user/package/docker/ && sudo rpm -Uvh /home/ec2-user/package/docker/* && sudo systemctl enable docker && sudo systemctl start docker
 sudo yum install cronie -y --downloadonly --downloaddir=/home/ec2-user/package/cronie/ && sudo rpm -Uvh /home/ec2-user/package/cronie/* && sudo systemctl enable crond && sudo systemctl start crond
 #sudo yum install -y docker 
